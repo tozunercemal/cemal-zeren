@@ -1,154 +1,118 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zeren'e Mektup</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #311026 100%);
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --text-main: #f8fafc;
-            --text-muted: #cbd5e1;
-            --accent: #f43f5e;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: var(--bg-gradient);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow-x: hidden;
-            padding: 20px;
-        }
-        .container {
-            width: 100%;
-            max-width: 680px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 40px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-            position: relative;
-            z-index: 10;
-            animation: fadeIn 1.5s ease-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .date {
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            color: var(--accent);
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        .content {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-        }
-        .content p {
-            margin-bottom: 20px;
-        }
-        .signature {
-            text-align: right;
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.2rem;
-            color: var(--text-main);
-        }
-        .hearts-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: 1;
-        }
-        .heart {
-            position: absolute;
-            bottom: -20px;
-            background-color: rgba(244, 63, 94, 0.6);
-            transform: rotate(45deg);
-            animation: floatUp 6s linear infinite;
-        }
-        .heart::before, .heart::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: inherit;
-            border-radius: 50%;
-        }
-        .heart::before { top: -50%; left: 0; }
-        .heart::after { top: 0; left: -50%; }
-        @keyframes floatUp {
-            0% { transform: translateY(0) rotate(45deg) scale(0.6); opacity: 0; }
-            50% { opacity: 0.8; }
-            100% { transform: translateY(-100vh) rotate(45deg) scale(1.2); opacity: 0; }
-        }
-        @media(max-width: 600px) {
-            .container { padding: 24px; }
-            h1 { font-size: 1.8rem; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zeren ❤️</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;background:#050505;color:#fff;font-family:Arial,Helvetica,sans-serif;
+ overflow-x:hidden;
+}
+body:before{
+ content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;
+ background:radial-gradient(circle at 20% 20%,#e50914 0,transparent 28%),
+            radial-gradient(circle at 80% 70%,#9b0000 0,transparent 30%);
+}
+.hero{
+ min-height:100vh;display:flex;align-items:center;justify-content:center;
+ text-align:center;padding:30px;position:relative;
+ background:linear-gradient(135deg,#050505 0%,#160000 55%,#050505 100%);
+}
+.hero-inner{max-width:850px;z-index:2}
+.badge{
+ display:inline-block;border:1px solid #e50914;color:#ff5a60;border-radius:999px;
+ padding:9px 18px;font-size:13px;letter-spacing:2px;text-transform:uppercase;
+ margin-bottom:25px;
+}
+h1{font-size:clamp(55px,13vw,125px);margin:0;line-height:.9;letter-spacing:-5px}
+.red{color:#e50914;text-shadow:0 0 35px rgba(229,9,20,.45)}
+.subtitle{font-size:clamp(18px,3vw,28px);color:#ddd;margin:28px 0 35px}
+.date{color:#aaa;font-size:16px}
+.btn{
+ display:inline-block;margin-top:30px;padding:14px 25px;border-radius:30px;
+ background:#e50914;color:#fff;text-decoration:none;font-weight:bold;
+ box-shadow:0 0 25px rgba(229,9,20,.3);transition:.2s
+}
+.btn:hover{transform:translateY(-2px);background:#ff1823}
+section{padding:85px 20px;position:relative}
+.container{max-width:900px;margin:auto}
+.section-title{text-align:center;font-size:38px;margin:0 0 40px}
+.card{
+ background:rgba(20,20,20,.85);border:1px solid #2b2b2b;border-radius:25px;
+ padding:35px;box-shadow:0 15px 50px rgba(0,0,0,.4)
+}
+.message{font-size:18px;line-height:1.9;color:#eee}
+.photo-wrap{max-width:620px;margin:0 auto;border-radius:25px;overflow:hidden;border:2px solid #e50914;box-shadow:0 0 45px rgba(229,9,20,.2)}
+.photo{width:100%;display:block}
+.caption{text-align:center;color:#aaa;margin-top:20px}
+.hearts{position:fixed;inset:0;pointer-events:none;z-index:5;overflow:hidden}
+.heart{position:absolute;bottom:-30px;color:#e50914;font-size:20px;animation:float 7s linear infinite;opacity:.6}
+@keyframes float{0%{transform:translateY(0) rotate(0);opacity:0}15%{opacity:.7}100%{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+footer{text-align:center;padding:60px 20px;color:#777;background:#030303}
+@media(max-width:600px){.card{padding:24px}.message{font-size:16px}section{padding:65px 16px}}
+</style>
 </head>
 <body>
-    <div class="hearts-container" id="heartsContainer"></div>
-    <div class="container">
-        <div class="header">
-            <div class="date">12 Haziran 2022</div>
-            <h1>Zeren'e</h1>
-        </div>
-        <div class="content">
-            <p>Mektubunuzun metnini buradaki paragrafların arasına ekleyebilirsiniz...</p>
-        </div>
-        <div class="signature">
-            Sevgiyle...
-        </div>
-    </div>
 
-    <script>
-        function createHeart() {
-            const container = document.getElementById('heartsContainer');
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            
-            const size = Math.random() * 12 + 8;
-            heart.style.width = `${size}px`;
-            heart.style.height = `${size}px`;
-            heart.style.left = `${Math.random() * 100}vw`;
-            heart.style.animationDuration = `${Math.random() * 4 + 4}s`;
-            heart.style.animationDelay = `${Math.random() * 2}s`;
-            
-            container.appendChild(heart);
-            setTimeout(() => { heart.remove(); }, 8000);
-        }
-        setInterval(createHeart, 400);
-    </script>
+<div class="hearts" id="hearts"></div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">Sadece senin için ❤️</div>
+    <h1>ZEREN<span class="red">.</span></h1>
+    <p class="subtitle">Benim güzelimmm ❤️</p>
+    <div class="date">12 Haziran 2022 • Başlayan hikâyemiz</div>
+    <a class="btn" href="#mektup">Sana bir şey söylemek istiyorum ↓</a>
+  </div>
+</header>
+
+<section id="mektup">
+ <div class="container">
+  <h2 class="section-title">Sana ❤️</h2>
+  <div class="card message">
+   <p>Bazen sana olan sevgimi anlatmaya kelimeler yetmiyor gibi hissediyorum. Hayatımda olduğun için kendimi gerçekten çok şanslı hissediyorum. Seninle geçirdiğim en küçük an bile benim için çok değerli. Gülüşün, sesin, bana bakışın… hepsi benim için ayrı bir mutluluk. 🥹❤️</p>
+   <p>İyi ki yollarımız kesişmiş, iyi ki seni tanımışım ve iyi ki hâlâ yanımdasın. Aradan ne kadar zaman geçerse geçsin sana olan sevgimin hiç eksilmeyeceğini biliyorum. Hatta seni tanıdıkça, seninle daha fazla şey yaşadıkça seni daha da çok seviyorum.</p>
+   <p>Ben sadece bugününü değil, seninle geçireceğimiz bütün güzel günleri düşünüyorum. Birlikte güleceğimiz, gezeceğimiz, saçma sapan şeylere takılıp saatlerce konuşacağımız daha çooook günümüz olsun. 🫶🏻</p>
+   <p>Seni kelimelerle anlatamayacağım kadar çok seviyorum benim güzelim. İyi ki benimlesin, iyi ki hayatımdasın. ❤️</p>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="container">
+  <h2 class="section-title">Bizden bir an 📸</h2>
+  <div class="photo-wrap">
+   <!-- İstersen buradaki fotoğrafın bağlantısını değiştirebilir veya kendi fotoğrafını ekleyebilirsin -->
+   <img class="photo" src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1000&auto=format&fit=crop" alt="Biz">
+  </div>
+  <div class="caption">İyi ki varsın sevgilim...</div>
+ </div>
+</section>
+
+<footer>
+  <p>Zeren & Sen ❤️ Sonsuza Kadar</p>
+</footer>
+
+<script>
+// Kalplerin havaya uçuş efekti için basit bir JavaScript
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.innerHTML = '❤️';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+  document.getElementById('hearts').appendChild(heart);
+  setTimeout(() => {
+    heart.remove();
+  }, 7000);
+}
+setInterval(createHeaderHeart, 400); // Ekstra kalp akışı
+function createHeaderHeart() {
+  createHeart();
+}
+</script>
 </body>
 </html>
